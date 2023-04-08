@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/layout_guide_base"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E0000000"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_direction_command_description"
+                style="@style/TextViewBold.Size22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="10sp"
+                android:text="@string/title_direction_command_description"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tv_direction_command_example_front"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_direction_command_example_front"
+                style="@style/TextViewBold.Size18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:lineSpacingExtra="10sp"
+                android:text="@string/tv_direction_command_example_front"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tv_direction_command_example_back"
+                app:layout_constraintEnd_toEndOf="@+id/tv_direction_command_description"
+                app:layout_constraintStart_toStartOf="@+id/tv_direction_command_description"
+                app:layout_constraintTop_toBottomOf="@+id/tv_direction_command_description" />
+
+            <TextView
+                android:id="@+id/tv_direction_command_example_back"
+                style="@style/TextViewBold.Size18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:lineSpacingExtra="10sp"
+                android:text="@string/title_direction_command_example_back"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_direction_command_description"
+                app:layout_constraintStart_toStartOf="@+id/tv_direction_command_description"
+                app:layout_constraintTop_toBottomOf="@+id/tv_direction_command_example_front" />
+
+            <ImageView
+                android:id="@+id/iv_direction_command_front"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_guide_arrow_left"
+                app:layout_constraintBottom_toTopOf="@+id/tv_direction_command_front"
+                app:layout_constraintEnd_toEndOf="@+id/tv_direction_command_front"
+                app:layout_constraintStart_toStartOf="@+id/tv_direction_command_front"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_direction_command_front"
+                style="@style/TextViewBold.Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/title_direction_command_front"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_direction_command_front" />
+
+            <ImageView
+                android:id="@+id/iv_direction_command_back"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_guide_arrow_right"
+                app:layout_constraintBottom_toTopOf="@+id/tv_direction_command_back"
+                app:layout_constraintEnd_toEndOf="@+id/tv_direction_command_back"
+                app:layout_constraintStart_toStartOf="@+id/tv_direction_command_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_direction_command_back"
+                style="@style/TextViewBold.Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/title_direction_command_back"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_direction_command_back" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

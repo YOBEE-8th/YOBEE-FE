@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="recommendProgressViewModel"
+            type="com.ssafy.yobee.ui.recommend.RecommendProgressViewModel" />
+
+        <variable
+            name="upsideMenu"
+            type="com.ssafy.domain.model.recommend.RecommendDomainModel" />
+
+        <variable
+            name="downsideMenu"
+            type="com.ssafy.domain.model.recommend.RecommendDomainModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.recommend.RecommendProgressFragment">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/pi_recommend_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+            app:indicatorColor="@color/bittersweet_400"
+            app:trackColor="@color/grey_300"
+            android:progress="@{recommendProgressViewModel.progress}"
+            android:max="15" />
+
+        <ImageView
+            android:id="@+id/iv_menu_upside"
+            glideImage="@{upsideMenu.image}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:onClick="@{() -> recommendProgressViewModel.upsideMenuClick()}"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_food"
+            app:layout_constraintBottom_toTopOf="@id/iv_menu_downside"
+            app:layout_constraintTop_toBottomOf="@id/pi_recommend_progress" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tv_menu_upside"
+            style="@style/ButtonStyle.SmallStyle.BitterSweet4008Style"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/grey_600"
+            android:onClick="@{() -> recommendProgressViewModel.upsideMenuClick()}"
+            android:text="@{upsideMenu.title}"
+            android:paddingHorizontal="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_menu_upside"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_menu_downside"
+            glideImage="@{downsideMenu.image}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:onClick="@{() -> recommendProgressViewModel.downsideMenuClick()}"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_food"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_menu_upside"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tv_menu_downside"
+            style="@style/ButtonStyle.SmallStyle.BitterSweet4008Style"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/grey_600"
+            android:onClick="@{() -> recommendProgressViewModel.downsideMenuClick()}"
+            android:text="@{downsideMenu.title}"
+            android:paddingHorizontal="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_menu_downside"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

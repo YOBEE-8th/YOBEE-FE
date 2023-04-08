@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="myPageMainFragment"
+            type="com.ssafy.yobee.ui.mypage.MyPageMainFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mypage.MyPageMainFragment">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_my_page_main_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_toolbar">
+
+            <ImageView
+                android:id="@+id/iv_my_page_main_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_my_page_main_profile"
+            style="@style/TextViewBold.Size14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/cv_my_page_main_profile"
+            app:layout_constraintStart_toEndOf="@+id/cv_my_page_main_profile"
+            app:layout_constraintTop_toTopOf="@+id/cv_my_page_main_profile" />
+
+        <TextView
+            style="@style/TextViewRegular.Size14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@string/content_my_page_main_nickname_nim"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_my_page_main_profile"
+            app:layout_constraintStart_toEndOf="@+id/tv_my_page_main_profile"
+            app:layout_constraintTop_toTopOf="@+id/tv_my_page_main_profile" />
+
+        <ImageView
+            android:id="@+id/iv_my_page_main_logout"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_logout"
+            android:layout_marginEnd="20dp"
+            android:onClick="@{()->myPageMainFragment.logout()}"
+            app:layout_constraintBottom_toBottomOf="@+id/cv_my_page_main_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cv_my_page_main_profile" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_my_page_main_edit_user"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/content_my_page_main_edit_button"
+            android:onClick="@{()->myPageMainFragment.moveProfileFragment()}"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_my_page_main_profile" />
+
+        <com.github.mikephil.charting.charts.RadarChart
+            android:id="@+id/rc_my_page_main_exp"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_my_page_main_edit_user" />
+
+        <View
+            android:id="@+id/view_my_page_main_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey_300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rc_my_page_main_exp" />
+
+        <TextView
+            android:id="@+id/tv_my_page_main_review"
+            style="@style/TextViewBold.Size14"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:paddingStart="20dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/title_my_page_main_review"
+            android:textColor="@color/black"
+            android:onClick="@{()->myPageMainFragment.onMyReviewClick()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_my_page_main_divider" />
+
+        <TextView
+            android:id="@+id/tv_my_page_main_like"
+            style="@style/TextViewBold.Size14"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:paddingStart="20dp"
+            android:gravity="center_vertical"
+            android:text="@string/title_my_page_main_like"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_page_main_review" />
+
+        <View
+            android:id="@+id/view_my_page_main_divider_2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/grey_300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_page_main_like" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_my_page_main_divider_2">
+
+            <TextView
+                android:id="@+id/tv_my_page_main_change_pwd"
+                style="@style/TextViewBold.Size14"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:paddingStart="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/title_my_page_main_change_pwd"
+                android:onClick="@{()->myPageMainFragment.moveChangePasswordFragment()}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_my_page_main_withdraw"
+                style="@style/TextViewBold.Size14"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:paddingStart="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/title_my_page_main_withdraw"
+                android:onClick="@{()->myPageMainFragment.withdrawal()}"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

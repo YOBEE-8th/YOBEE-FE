@@ -1,0 +1,120 @@
+[versions]
+# androidx
+androidx-core = "1.7.0"
+androidx-appcompat = "1.5.1"
+androidx-test-junit = "1.1.4"
+androidx-test-espresso = "3.5.0"
+androidx_navigation_version = "2.5.0"
+androidx_fragment_version = "1.5.0"
+androidx_lifecycle_extension_version = "2.2.0"
+navigation_safe_args_version = "2.4.2"
+
+# android
+android-material = "1.7.0"
+android-library = "7.3.0"
+android-application = "7.3.0"
+
+# junit
+junit = "4.13.2"
+
+kotlin = "1.7.10"
+hilt = "2.44"
+kakao_sdk_version = "2.11.2"
+retrofit = "2.9.0"
+databinding = "7.3.1"
+
+okhttp3 = "4.10.0"
+
+#tedpermission
+tedpermission_version = "3.3.0"
+
+
+# gson
+gson_version = "2.9.1"
+
+# google
+google_auth_version = "20.4.1"
+google_service_version = "4.3.15"
+firebase_version = "31.2.0"
+firebase_messaging_version = "23.1.1"
+# glide
+glide_version = "4.13.0"
+
+# tab indicator
+tab_indicator_version = "1.0.3"
+
+# radar chart
+radar_chart_version = "v3.1.0"
+
+# refresh layout
+refresh_layout_version = "1.1.0"
+
+#rating_bar
+rating_bar_version = "1.5.1"
+
+#lottie
+lottie_version = "5.2.0"
+
+# mlkit
+mlkit_version = "17.0.7"
+
+# typer
+typer_version = "0.1"
+
+[libraries]
+google_firebase = { module = "com.google.firebase:firebase-bom", version.ref = "firebase_version" }
+google_firebase_auth = { module = "com.google.firebase:firebase-auth-ktx" }
+firebase_messaging = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "firebase_messaging_version" }
+androidx_core = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx_appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+android_material = { module = "com.google.android.material:material", version.ref = "android-material" }
+junit = { module = "junit:junit", version.ref = "junit" }
+android_test_junit = { module = "androidx.test.ext:junit", version.ref = "androidx-test-junit" }
+android_test_espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso" }
+hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt_compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+kakao-sdk = { module = "com.kakao.sdk:v2-all", version.ref = "kakao_sdk_version" }
+databinding = { module = "androidx.databinding:databinding-runtime", version.ref = "databinding" }
+databinding_compiler = { module = "com.android.databinding:compiler", version.ref = "databinding" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx_navigation_version" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx_navigation_version" }
+androidx-navigation-common = { module = "androidx.navigation:navigation-common", version.ref = "androidx_navigation_version" }
+androidx-navigation-dynamic-features-fragment = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "androidx_navigation_version" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx_navigation_version" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx_fragment_version" }
+androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "androidx_lifecycle_extension_version" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+retrofit-rxjava = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
+okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3" }
+okhttp3-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp3" }
+okhttp3-urlconnection = { module = "com.squareup.okhttp3:okhttp-urlconnection", version.ref = "okhttp3" }
+okhttp3-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp3" }
+google-gson = { module = "com.google.code.gson:gson", version.ref = "gson_version" }
+google_auth = { module = "com.google.android.gms:play-services-auth", version.ref = "google_auth_version" }
+tedpermission = { module = "io.github.ParkSangGwon:tedpermission-normal", version.ref = "tedpermission_version" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide_version" }
+glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide_version" }
+tab-indicator = { module = "com.romandanylyk:pageindicatorview", version.ref = "tab_indicator_version" }
+radar-chart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "radar_chart_version" }
+refresh-layout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "refresh_layout_version" }
+rating-bar = { module = "com.github.ome450901:SimpleRatingBar", version.ref = "rating_bar_version" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie_version" }
+mlkit = { module = "com.google.mlkit:image-labeling", version.ref = "mlkit_version" }
+typer = { module = "com.github.mond-al:typer" , version.ref="typer_version" }
+
+
+[bundles]
+androidx = ["androidx_core", "androidx_appcompat", "androidx-navigation-fragment-ktx", "androidx-navigation-ui-ktx", "androidx-navigation-common", "androidx-navigation-dynamic-features-fragment", "androidx-navigation-testing",
+    "androidx-fragment-ktx", "androidx-lifecycle-extensions"]
+navigation = ["androidx-navigation-fragment-ktx", "androidx-navigation-ui-ktx", "androidx-navigation-common", "androidx-navigation-dynamic-features-fragment", "androidx-navigation-testing"]
+retrofit-bundles = ["retrofit", "retrofit-gson-converter", "retrofit-rxjava"]
+okhttp3-bundles = ["okhttp3", "okhttp3-interceptor", "okhttp3-urlconnection", "okhttp3-logging"]
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android_library = { id = "com.android.library", version.ref = "android-library" }
+android_application = { id = "com.android.application", version.ref = "android-application" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+navigation_safe_args_plugin = { id = "androidx.navigation.safeargs", version.ref = "navigation_safe_args_version" }
+google_service = { id = "com.google.gms.google-services", version.ref = "google_service_version" }

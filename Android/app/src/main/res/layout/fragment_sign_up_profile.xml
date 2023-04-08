@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="signUpFragment"
+            type="com.ssafy.yobee.ui.register.SignUpProfileFragment" />
+
+        <variable
+            name="registerViewModel"
+            type="com.ssafy.yobee.ui.register.RegisterViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.register.SignUpProfileFragment">
+
+        <include
+            android:id="@+id/tb_register"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv_sign_up_profile_profile_image"
+            glideImageCircleCrop="@{registerViewModel.profileImage}"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="24dp"
+            android:adjustViewBounds="true"
+            android:onClick="@{()->signUpFragment.getGalleryImage()}"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tb_register" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:cardBackgroundColor="@color/bittersweet_500"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_sign_up_profile_profile_image"
+            app:layout_constraintEnd_toEndOf="@id/iv_sign_up_profile_profile_image">
+
+            <ImageView
+                android:id="@+id/iv_sign_up_camera"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_camera" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_sign_up_profile_title_nickname"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/title_nickname"
+            android:textColor="@color/grey_600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_sign_up_profile_profile_image" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_sign_up_profile_nickname"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:boxStrokeErrorColor="@color/sunset"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/sunset"
+            app:layout_constraintEnd_toStartOf="@id/btn_sign_up_profile_nickname"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_up_profile_title_nickname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_sign_up_profile_nickname"
+                style="@style/TextInputEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/content_input_nickname_is_empty"
+                android:inputType="textPersonName"
+                android:maxLength="8"
+                android:maxLines="1"
+                android:text="@{registerViewModel.nickname}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_up_profile_nickname"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="@{()->registerViewModel.nicknameCheck(etSignUpProfileNickname.getText().toString().trim())}"
+            android:text="@string/title_ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_up_profile_title_nickname" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_up_profile_complete"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:enabled="false"
+            android:onClick="@{()->registerViewModel.joinAccount()}"
+            android:text="@string/title_complete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

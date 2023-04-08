@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginFragment"
+            type="com.ssafy.yobee.ui.login.LoginFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginFragment">
+
+        <ImageView
+            android:id="@+id/iv_login_logo"
+            android:layout_width="140dp"
+            android:layout_height="170dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/ic_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_login_email"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="34dp"
+            app:boxStrokeErrorColor="@color/sunset"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/sunset"
+            app:layout_constraintTop_toBottomOf="@id/iv_login_logo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_login_email"
+                style="@style/TextInputEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/content_input_email_is_empty"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_login_pw"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            app:boxStrokeErrorColor="@color/sunset"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/sunset"
+            app:layout_constraintTop_toBottomOf="@id/tl_login_email"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_login_pw"
+                style="@style/TextInputEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/content_input_password_is_empty"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login_login"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/title_login"
+            android:onClick="@{()->loginFragment.checkEmail()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tl_login_pw" />
+
+        <CheckBox
+            android:id="@+id/cb_login_auto_login"
+            style="@style/CheckBoxStyle"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/btn_login_login"
+            app:layout_constraintTop_toBottomOf="@id/btn_login_login" />
+
+        <TextView
+            android:id="@+id/tv_login_auto_login"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/title_auto_login"
+            android:textColor="@color/grey_600"
+            app:layout_constraintBottom_toBottomOf="@id/cb_login_auto_login"
+            app:layout_constraintStart_toEndOf="@id/cb_login_auto_login"
+            app:layout_constraintTop_toTopOf="@id/cb_login_auto_login" />
+
+        <TextView
+            android:id="@+id/tv_login_register"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:padding="4dp"
+            android:text="@string/title_register"
+            android:textColor="@color/grey_600"
+            android:onClick="@{()->loginFragment.moveRegisterFragment()}"
+            app:layout_constraintBottom_toBottomOf="@id/cb_login_auto_login"
+            app:layout_constraintEnd_toStartOf="@id/line_login"
+            app:layout_constraintTop_toTopOf="@id/cb_login_auto_login" />
+
+        <View
+            android:id="@+id/line_login"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/grey_600"
+            app:layout_constraintBottom_toBottomOf="@id/tv_login_find_pw"
+            app:layout_constraintEnd_toStartOf="@id/tv_login_find_pw"
+            app:layout_constraintTop_toTopOf="@id/tv_login_find_pw" />
+
+        <TextView
+            android:id="@+id/tv_login_find_pw"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:onClick="@{()->loginFragment.moveResetPasswordFragment()}"
+            android:text="@string/title_reset_password"
+            android:textColor="@color/grey_600"
+            app:layout_constraintBottom_toBottomOf="@id/cb_login_auto_login"
+            app:layout_constraintEnd_toEndOf="@id/btn_login_login"
+            app:layout_constraintTop_toTopOf="@id/cb_login_auto_login" />
+
+        <TextView
+            android:id="@+id/tv_login_sns_text"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:padding="4dp"
+            android:text="@string/title_sns_login"
+            android:textColor="@color/grey_600"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_login_auto_login" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login_kakao_login"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingEnd="40dp"
+            android:text="@string/title_kakao_login"
+            app:backgroundTint="@color/sunglow"
+            app:icon="@drawable/ic_kakao"
+            app:iconSize="24dp"
+            app:iconTint="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_login_sns_text"
+            tools:ignore="RtlSymmetry" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login_google_login"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/title_google_login"
+            android:onClick="@{()->loginFragment.initGoogleLogin()}"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/btn_login_kakao_login"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/iv_login_google"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:elevation="10dp"
+            android:src="@drawable/ic_google"
+            app:layout_constraintBottom_toBottomOf="@id/btn_login_google_login"
+            app:layout_constraintStart_toStartOf="@id/btn_login_google_login"
+            app:layout_constraintTop_toTopOf="@id/btn_login_google_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

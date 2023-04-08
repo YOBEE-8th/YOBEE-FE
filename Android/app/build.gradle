@@ -1,0 +1,83 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-android'
+    id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs.kotlin'
+    // kapt는 항상 맨 아래로
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.ssafy.yobee'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.ssafy.yobee"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation(project(":common"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation libs.bundles.navigation
+    implementation libs.bundles.androidx
+    implementation libs.android.material
+    implementation libs.hilt
+    implementation libs.databinding
+    implementation libs.tedpermission
+
+    implementation libs.bundles.retrofit.bundles
+    implementation libs.bundles.okhttp3.bundles
+    implementation libs.rating.bar
+    implementation libs.kakao.sdk
+    implementation libs.firebase.messaging
+    implementation libs.google.auth
+    implementation libs.google.firebase.auth
+    implementation platform(libs.google.firebase)
+
+    // glide
+    implementation(libs.glide)
+    annotationProcessor(libs.glide.compiler)
+
+    implementation(libs.tab.indicator)
+    implementation(libs.radar.chart)
+    implementation(libs.refresh.layout)
+    implementation(libs.lottie)
+    implementation(libs.mlkit)
+    implementation(libs.typer)
+
+    testImplementation libs.junit
+
+    androidTestImplementation libs.android.test.junit
+    androidTestImplementation libs.android.test.espresso
+
+
+    kapt libs.hilt.compiler
+}

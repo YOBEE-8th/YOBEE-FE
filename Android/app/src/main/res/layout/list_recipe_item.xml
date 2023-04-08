@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="recipe"
+            type="com.ssafy.domain.model.recipe.RecipeDomainModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:elevation="2dp"
+        app:cardCornerRadius="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/TextViewRegular.Size10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_rectangle_radius8_bittersweet400"
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="6dp"
+                android:text="AI 레시피"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showAILabel="@{recipe.isAI}" />
+
+            <ImageView
+                android:id="@+id/iv_list_recipe_item"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:glideListImage="@{recipe.imageUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_list_recipe_item_title"
+                style="@style/TextViewBold.Size12"
+                setRecipeTitle="@{recipe.title}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_list_recipe_item" />
+
+            <com.willy.ratingbar.BaseRatingBar
+                android:id="@+id/baseRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                app:srb_clickable="false"
+                app:layout_constraintBottom_toBottomOf="@id/iv_list_recipe_item_like"
+                app:layout_constraintStart_toStartOf="@id/tv_list_recipe_item_title"
+                app:layout_constraintTop_toTopOf="@id/iv_list_recipe_item_like"
+                app:srb_drawableEmpty="@drawable/ic_recipe_level_empty"
+                app:srb_drawableFilled="@drawable/ic_recipe_level_fill"
+                app:srb_isIndicator="false"
+                app:srb_minimumStars="1"
+                app:srb_numStars="3"
+                app:srb_rating="@{recipe.difficulty}"
+                app:srb_scrollable="false"
+                app:srb_starHeight="8dp"
+                app:srb_starPadding="2dp"
+                app:srb_starWidth="8dp"
+                app:srb_stepSize="1" />
+
+            <CheckedTextView
+                android:id="@+id/iv_list_recipe_item_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="10dp"
+                android:checkMark="@drawable/bg_heart_selector"
+                android:checked="@{recipe.like}"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintEnd_toStartOf="@id/iv_list_recipe_item_like_count" />
+
+            <TextView
+                android:id="@+id/iv_list_recipe_item_like_count"
+                style="@style/TextViewRegular.Size12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="14dp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/iv_list_recipe_item_like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_list_recipe_item_like"
+                app:setLikeCount="@{recipe.likeCount}" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

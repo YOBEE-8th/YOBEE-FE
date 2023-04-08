@@ -1,0 +1,193 @@
+<resources>
+    <string name="app_name">Yobee</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- FCM Channel Name -->
+    <string name="fcm_channel_name">YOBEE</string>
+
+    <!-- no item -->
+    <string name="title_no_item_recipe_review">리뷰가 존재하지 않습니다</string>
+    <string name="title_no_item_search">검색 결과가 존재하지 않습니다\n다시 검색해주세요</string>
+    <string name="title_no_item_my_review">작성한 리뷰가 존재하지 않습니다</string>
+    <string name="title_no_item_my_interest">즐겨찾기한 레시피가 존재하지 않습니다</string>
+
+    <!-- Splash -->
+    <string name="content_splash_title">나만의 요리비서</string>
+
+    <!-- Home -->
+    <string name="title_home_all">ALL</string>
+    <string name="title_home_soup">국/찌개</string>
+    <string name="title_home_side">밥/반찬</string>
+    <string name="title_home_grilled">구이/볶음</string>
+    <string name="title_home_noodle">면</string>
+    <string name="title_home_dessert">디저트</string>
+    <string name="title_home_category">어떤 요리를 해볼까요?</string>
+    <string name="title_home_recommend">오늘 뭘 먹을지 고민된다면?</string>
+    <string name="title_home_go_recommend">메뉴 월드컵 하러 가기</string>
+
+    <!-- Button -->
+    <string name="title_next">다음</string>
+    <string name="title_ok">확인</string>
+    <string name="title_complete">완료</string>
+
+    <!-- Login -->
+    <string name="title_auto_login">자동 로그인</string>
+    <string name="title_reset_password">비밀번호 재설정</string>
+    <string name="title_register">회원가입</string>
+    <string name="title_sns_login">SNS 로그인</string>
+    <string name="title_kakao_login">카카오 로그인</string>
+    <string name="title_google_login">구글 로그인</string>
+    <string name="title_login">로그인</string>
+    <string name="content_login_account_not_correct">계정 정보가 일치하지 않습니다.</string>
+
+    <!-- Email -->
+    <string name="title_email">이메일</string>
+    <string name="content_input_email_is_empty">이메일를 입력하세요.</string>
+    <string name="content_input_email_not_correct">이메일 형식이 올바르지 않습니다.</string>
+
+    <!-- Password -->
+    <string name="title_password">비밀번호</string>
+    <string name="title_password_confirm">비밀번호 확인</string>
+    <string name="content_input_password_is_empty">비밀번호를 입력해 주세요.</string>
+    <string name="content_password_regular_expression">"비밀번호는 영문자, 숫자, 특수문자 3종류를 조합하여 8자리 이상 입력해 주세요."</string>
+    <string name="content_password_use_ok">"사용가능한 비밀번호입니다."</string>
+    <string name="content_password_confirm_correct">비밀번호가 일치합니다.</string>
+    <string name="content_password_confirm_inCorrect">비밀번호가 일치하지 않습니다.</string>
+    <string name="title_change_password">비밀번호 변경</string>
+    <string name="content_reset_password">비밀번호 재설정하기</string>
+    <string name="content_reset_password_help_strong">임시 비밀번호를 발송</string>
+    <string name="content_reset_password_help">아래의 이메일 정보를 입력하시면 해당\n임시 비밀번호를 발송해 드립니다.</string>
+
+
+    <!-- Verification Code -->
+    <string name="title_verification_code">인증번호</string>
+    <string name="content_verification_code_hint">인증번호를 입력해주세요.</string>
+    <string name="title_left_verification_code">인증 유효시간  : </string>
+    <string name="title_resend">재전송</string>
+    <string name="content_verification_code_time_out">인증번호를 다시 요청해 주세요.</string>
+
+    <!-- Nickname -->
+    <string name="title_nickname">닉네임</string>
+    <string name="content_input_nickname_is_empty">2 ~ 8자</string>
+    <string name="content_nickname_length_incorrect">닉네임은 2 ~ 8자리 입력해 주세요.</string>
+
+
+    <!-- My Page -->
+    <string name="title_my_page_main_exp">내 경험치</string>
+    <string name="title_my_page_main_review">나의 리뷰</string>
+    <string name="title_my_page_main_like">나의 즐겨찾기</string>
+    <string name="title_my_page_main_change_pwd">비밀번호 변경</string>
+    <string name="title_my_page_main_withdraw">회원 탈퇴</string>
+    <string name="content_my_page_main_edit_button">회원정보 수정</string>
+    <string name="content_my_page_main_nickname_nim">님</string>
+    <string name="title_logout">로그아웃</string>
+    <string name="content_logout">로그아웃 하시겠습니까?</string>
+    <string name="title_withdrawal">탈퇴</string>
+    <string name="content_withdrawal">회원 탈퇴시, 모든 정보가 사라집니다.\n정말로 탈퇴하시겠습니까?</string>
+
+    <!-- Error -->
+    <string name="content_error_message">네트워크 통신 중\n에러가 발생했습니다</string>
+    <string name="content_error_refresh">당겨서 새로고침</string>
+    <string name="title_menu_search">검색</string>
+    <string name="title_menu_my_page">마이페이지</string>
+
+    <!-- Recipe Detail -->
+    <string name="content_recipe_detail_ai">AI 레시피</string>
+    <string name="title_recipe_detail_level">난이도</string>
+    <string name="title_recipe_detail_time">소요 시간</string>
+    <string name="title_recipe_detail_servings">기준</string>
+    <string name="content_recipe_detail_start">요리하기</string>
+
+    <!-- Recipe List -->
+    <string name="content_sort_like">좋아요</string>
+    <string name="content_sort_review">리뷰</string>
+    <string name="content_sort_difficulty">난이도</string>
+    <string name="title_sort">정렬</string>
+    <string name="content_category_all">전체</string>
+    <string name="content_category_soup">국/찌개</string>
+    <string name="content_category_side">밥/반찬</string>
+    <string name="content_category_grilled">구이/볶음</string>
+    <string name="content_category_noodle">면</string>
+    <string name="content_category_dessert">디저트</string>
+    <string name="title_search">검색</string>
+    <string name="content_input_search_is_empty">검색어를 입력하세요</string>
+
+    <!-- Cook Start -->
+    <string name="title_cook_start_recipe">오늘의 레시피</string>
+    <string name="title_cook_start_yobee">요비 선택</string>
+    <string name="content_cook_start_yobee">요비 선택</string>
+    <string name="content_cook_start_button">요리하기</string>
+
+    <!-- Cook Progress-->
+    <string name="content_speech_to_text_error">"당신의 장비가 음성을 텍스트로 변경하지 못합니다."</string>
+    <string name="content_permission_denied">권한이 거부 되었습니다.</string>
+    <string name="content_answer_first_page">첫 페이지 입니다.</string>
+    <string name="content_answer_last_page">마지막 페이지 입니다.</string>
+    <string name="content_question_help">무엇을 도와 드릴까요?</string>
+
+    <!-- Cook Finish -->
+    <string name="content_cook_finish_photo">사진 찍고 경험치 얻기</string>
+    <string name="content_cook_finish_home">홈으로</string>
+    <string name="title_cook_finish">완성했어요</string>
+
+    <!-- Analyze Image -->
+    <string name="content_analyze_image_retry">다시 찍기</string>
+    <string name="content_analyze_image_upload">업로드</string>
+
+    <!-- Speech Recognition -->
+    <string name="content_error_audio">오디오에 문제가 발생하였습니다.</string>
+    <string name="content_error_client">클라이언트 요청에 문제가 발생하였습니다.</string>
+    <string name="content_error_insufficient_permissions">해당 권한이 없습니다.</string>
+    <string name="content_error_network">네트워크에 문제가 발생하였습니다.</string>
+    <string name="content_error_network_time_out">네트워크 요청 시간이 지났습니다.</string>
+    <string name="content_error_no_match">요청하신 결과가 존재하지 않습니다.</string>
+    <string name="content_error_server">서버에 문제가 발생하였습니다.</string>
+    <string name="content_error_speech_time_out">요청 시간이 지났습니다.</string>
+    <string name="content_error_other">알 수 없는 오류로 요청에 실패하였습니다..</string>
+
+
+    <!-- Analyze Fail -->
+    <string name="content_analyze_fail_retry">다시 찍기</string>
+    <string name="content_analyze_fail_home">홈으로</string>
+    <string name="title_analyze_fail_retry">음식 사진으로 인식되지 않았어요\n사진을 다시 찍어주세요</string>
+
+    <!-- Analyze Success -->
+    <string name="title_analyze_success_score">점수가</string>
+    <string name="title_analyze_success_num">5점</string>
+    <string name="title_analyze_success_increase">증가했습니다</string>
+    <string name="content_analyze_success_home">홈으로</string>
+    <string name="content_analyze_success_review">리뷰 작성</string>
+
+    <!-- 나의 리뷰 -->
+    <string name="content_review_by_date_item_write">리뷰 쓰기</string>
+    <string name="content_review_by_date_item_check">리뷰 확인</string>
+    <string name="content_review_edittext">리뷰를 작성해주세요(5~300자)</string>
+    <string name="content_review_btn_write">완료</string>
+    <string name="content_review_btn_edit">수정하기</string>
+    <string name="content_review_btn_delete">삭제하기</string>
+    <string name="content_review_max_cnt">/300</string>
+    <string name="content_review_cnt">0</string>
+
+    <!-- 가이드 -->
+    <string name="tv_guide_time">10:00</string>
+    <string name="tv_guide_description">육수를 넉넉히 붓고 10분 정도 끓이는 동안 소스를 만들고 배추가 익으면 먹기 시작합니다.</string>
+    <string name="title_base_command_description">선택한 음성의 이름을 불러 명령이나 질문을 해주세요</string>
+    <string name="title_base_command_example">유리야 뒤로 / 두리야 소스는 얼마나 넣어야 돼?</string>
+    <string name="title_no_name_command_description">마이크 버튼을 클릭하면\n이름을 안부르고 명령할 수 있어요</string>
+    <string name="title_no_name_command_example">예시) 뒤로 / 소스는 얼마나 넣어야 돼?</string>
+    <string name="title_direction_command_description">페이지는 앞, 뒤, 처음, 끝으로 이동할 수 있어요\n음성 명령과 슬라이드 모두 가능합니다:)</string>
+    <string name="tv_direction_command_example_front">앞으로 / 이전으로\n뒤로 / 다음으로 / 넘겨줘</string>
+    <string name="title_direction_command_example_back">맨 끝으로 / 맨 뒤로 / 마지막 페이지로\n맨 앞으로 / 첫 페이지로\n...</string>
+    <string name="title_direction_command_front">앞으로 슬라이드</string>
+    <string name="title_direction_command_back">뒤로 슬라이드</string>
+    <string name="title_question_command_description">질문은 아무거나 할 수 있어요</string>
+    <string name="title_question_command_example">돼지고기 얼마나 들어가?\n고추장은 얼마나 필요해?\n오늘 날씨 어때?\n...</string>
+    <string name="title_mic_detection_description">마이크에 불이 켜져있을 때 말하면\n인식률이 높아져요:)</string>
+    <string name="title_fire_strength_description">불을 사용하는 요리는\n불의 세기를 확인할 수 있어요</string>
+    <string name="title_set_timer_description">타이머는 클릭하거나\n알람 맞춰줘, 타이머 맞춰줘라고 명령하세요\n시간이 지나면 알람이 옵니다!</string>
+    <string name="title_set_volume_description">볼륨이 너무 작거나 크다고요?\n볼륨도 음성 명령으로 조절할 수 있습니다</string>
+    <string name="title_set_volume_example">볼륨 높여줘 / 볼륨 올려줘 / 소리 높여줘 / 소리 올려줘\n볼륨 낮춰줘 / 볼륨 내려줘 / 소리 낮춰줘 / 소리 내려줘</string>
+    <string name="title_guide_finish">이제 요리하러 가볼까요?</string>
+    <string name="content_guide_finish">요리하기</string>
+</resources>

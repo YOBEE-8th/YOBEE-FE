@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="recipeListViewModel"
+            type="com.ssafy.yobee.ui.recipe_list.RecipeListViewModel" />
+
+        <variable
+            name="recipeFragment"
+            type="com.ssafy.yobee.ui.recipe_list.RecipeListFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.recipe_list.RecipeListFragment">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/cb_recipe_list_is_ai"
+            android:layout_marginTop="20dp"
+            style="@style/CheckBoxStyle"
+            android:layout_marginStart="20dp"
+            android:onClick="@{()->recipeFragment.onIsAiCheckBoxClick()}"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar" />
+
+        <TextView
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="AI 레시피"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/cb_recipe_list_is_ai"
+            app:layout_constraintStart_toEndOf="@id/cb_recipe_list_is_ai"
+            app:layout_constraintTop_toTopOf="@id/cb_recipe_list_is_ai" />
+
+        <LinearLayout
+            android:id="@+id/ll_recipe_list_sort_by"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginEnd="20dp"
+
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+            app:layout_constraintBottom_toTopOf="@id/rv_recipe_list">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:adjustViewBounds="true"
+                android:onClick="@{()->recipeFragment.onOrderButtonClick()}"
+                android:src="@drawable/ic_sort" />
+
+            <TextView
+                android:id="@+id/tv_recipe_list_sort_by"
+                style="@style/TextViewRegular.Size12"
+                android:textColor="@color/grey_600"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:onClick="@{()->recipeFragment.onSortButtonClick()}"
+                app:setSortByText="@{recipeListViewModel.sortBy}" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recipe_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="36dp"
+            android:paddingHorizontal="20dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+            app:spanCount="2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

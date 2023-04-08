@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.ssafy.yobee.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_recommendFragment"
+            app:destination="@id/recommendFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ssafy.yobee.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_recommendFragment"
+            app:destination="@id/recommendFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_homeFragment_to_recipeListFragmentAndBottomSheet"
+            app:destination="@id/recipeListFragmentAndBottomSheet"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit">
+            <argument
+                android:name="category"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_recipeSearchFragment"
+            app:destination="@+id/recipeSearchFragmentAndBottomSheet"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_homeFragment_to_myPageMainFragment"
+            app:destination="@id/myPageMainFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ssafy.yobee.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpProfileFragment"
+            app:destination="@id/signUpProfileFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.ssafy.yobee.ui.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_signUpProfileFragment"
+            app:destination="@id/signUpProfileFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <argument
+            android:name="account"
+            app:argType="com.ssafy.yobee.ui.register.model.RegisterUIModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpProfileFragment"
+        android:name="com.ssafy.yobee.ui.register.SignUpProfileFragment"
+        android:label="SignUpProfileFragment"
+        tools:layout="@layout/fragment_sign_up_profile">
+        <action
+            android:id="@+id/action_signUpProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_signUpProfileFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit">
+            <argument
+                android:name="account"
+                app:argType="com.ssafy.yobee.ui.register.model.RegisterUIModel" />
+        </action>
+        <argument
+            android:name="account"
+            app:argType="com.ssafy.yobee.ui.register.model.RegisterUIModel" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/recipeListFragmentAndBottomSheet"
+        app:startDestination="@id/recipeListFragment">
+
+        <fragment
+            android:id="@+id/recipeListFragment"
+            android:name="com.ssafy.yobee.ui.recipe_list.RecipeListFragment"
+            android:label="RecipeListFragment">
+            <argument
+                android:name="category"
+                android:defaultValue='"all"'
+                app:argType="string" />
+
+            <action
+                android:id="@+id/action_recipeListFragment_to_sortBottomSheetFragment"
+                app:destination="@id/sortBottomSheetFragment" />
+            <action
+                android:id="@+id/action_recipeListFragment_pop"
+                app:popUpTo="@id/recipeListFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+            <action
+                android:id="@+id/action_recipeListFragment_to_recipeDetailGraph"
+                app:destination="@id/recipeDetailGraph"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit">
+                <argument
+                    android:name="recipeId"
+                    android:defaultValue="0"
+                    app:argType="integer" />
+                <argument
+                    android:name="recipeTitle"
+                    app:argType="string" />
+            </action>
+            <action
+                android:id="@+id/action_recipeListFragment_to_errorFragment"
+                app:destination="@id/errorFragment" />
+        </fragment>
+        <dialog
+            android:id="@+id/sortBottomSheetFragment"
+            android:name="com.ssafy.yobee.ui.common.SortBottomSheetFragment"
+            android:label="SortBottomSheetFragment">
+            <action
+                android:id="@+id/action_sortBottomSheetFragment_pop"
+                app:popUpTo="@id/sortBottomSheetFragment"
+                app:popUpToInclusive="true" />
+        </dialog>
+    </navigation>
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="com.ssafy.yobee.ui.common.ErrorFragment"
+        android:label="ErrorFragment">
+        <action
+            android:id="@+id/action_errorFragment_pop"
+            app:popUpTo="@id/errorFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <navigation
+        android:id="@+id/recipeDetailGraph"
+        app:startDestination="@id/recipeDetailFragment">
+        <fragment
+            android:id="@+id/recipeDetailFragment"
+            android:name="com.ssafy.yobee.ui.recipe.RecipeDetailFragment"
+            android:label="RecipeDetailFragment">
+            <argument
+                android:name="recipeId"
+                android:defaultValue="-1"
+                app:argType="integer" />
+            <argument
+                android:name="recipeTitle"
+                app:argType="string" />
+            <action
+                android:id="@+id/action_recipeDetailFragment_to_cookProgressGraph"
+                app:destination="@id/cookProgressGraph"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit">
+                <argument
+                    android:name="recipeId"
+                    android:defaultValue="0"
+                    app:argType="integer" />
+                <argument
+                    android:name="recipeTitle"
+                    app:argType="string" />
+                <argument
+                    android:name="recipeImg"
+                    app:argType="string" />
+            </action>
+            <action
+                android:id="@+id/action_recipeDetailFragment_pop"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit"
+                app:popUpTo="@id/recipeDetailFragment"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/action_recipeDetailFragment_to_errorFragment"
+                app:destination="@id/errorFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/ingredientsListFragment"
+            android:name="com.ssafy.yobee.ui.recipe.IngredientsListFragment"
+            android:label="IngredientsListFragment" />
+        <fragment
+            android:id="@+id/videoListFragment"
+            android:name="com.ssafy.yobee.ui.recipe.VideoListFragment"
+            android:label="VideoListFragment" />
+        <fragment
+            android:id="@+id/reviewListFragment"
+            android:name="com.ssafy.yobee.ui.recipe.ReviewListFragment"
+            android:label="ReviewListFragment" />
+    </navigation>
+    <fragment
+        android:id="@+id/myPageMainFragment"
+        android:name="com.ssafy.yobee.ui.mypage.MyPageMainFragment"
+        android:label="MyPageMainFragment">
+        <action
+            android:id="@+id/action_myPageMainFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_likeRecipeFragment"
+            app:destination="@id/likeRecipeFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_myPageMainFragment_pop"
+            app:popUpTo="@id/myPageMainFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_reviewByRecipeFragment"
+            app:destination="@id/reviewByRecipeFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="false"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_myPageProfileFragment"
+            app:destination="@id/myPageProfileFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+    </fragment>
+    <navigation
+        android:id="@+id/recipeSearchFragmentAndBottomSheet"
+        app:startDestination="@id/recipeSearchFragment">
+        <fragment
+            android:id="@+id/recipeSearchFragment"
+            android:name="com.ssafy.yobee.ui.search.RecipeSearchFragment"
+            android:label="RecipeSearchFragment">
+            <action
+                android:id="@+id/action_recipeSearchFragment_to_SearchSortBottomSheetFragment"
+                app:destination="@id/searchSortBottomSheetFragment" />
+            <action
+                android:id="@+id/action_recipeSearchFragment_to_errorFragment"
+                app:destination="@id/errorFragment" />
+            <action
+                android:id="@+id/action_recipeSearchFragment_pop"
+                app:popUpTo="@id/recipeSearchFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+            <action
+                android:id="@+id/action_recipeSearchFragment_to_recipeDetailGraph"
+                app:destination="@id/recipeDetailGraph"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit">
+                <argument
+                    android:name="recipeId"
+                    android:defaultValue="-1"
+                    app:argType="integer" />
+                <argument
+                    android:name="recipeTitle"
+                    app:argType="string" />
+            </action>
+        </fragment>
+        <dialog
+            android:id="@+id/searchSortBottomSheetFragment"
+            android:name="com.ssafy.yobee.ui.search.SearchSortBottomSheetFragment"
+            android:label="SearchSortBottomSheetFragment">
+            <action
+                android:id="@+id/action_SearchSortBottomSheetFragment_pop"
+                app:popUpTo="@id/searchSortBottomSheetFragment"
+                app:popUpToInclusive="true" />
+        </dialog>
+    </navigation>
+    <navigation
+        android:id="@+id/cookProgressGraph"
+        app:startDestination="@id/cookStartFragment">
+        <fragment
+            android:id="@+id/cookStartFragment"
+            android:name="com.ssafy.yobee.ui.cook.fragment.CookStartFragment"
+            android:label="CookStartFragment">
+
+            <argument
+                android:name="recipeId"
+                android:defaultValue="0"
+                app:argType="integer" />
+            <argument
+                android:name="recipeTitle"
+                app:argType="string" />
+            <argument
+                android:name="recipeImg"
+                app:argType="string" />
+            <action
+                android:id="@+id/action_cookStartFragment_to_cookProgressFragment"
+                app:destination="@id/cookProgressFragment" />
+            <action
+                android:id="@+id/action_cookStartFragment_to_guideFragment"
+                app:destination="@id/guideFragment"/>
+            <action
+                android:id="@+id/action_cookStart_fragment_pop"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit"
+                app:popUpTo="@id/cookStartFragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/guideFragment"
+            android:name="com.ssafy.yobee.ui.guide.GuideFragment"
+            android:label="GuideFragment">
+            <action
+                android:id="@+id/action_guideFragment_pop"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit"
+                app:popUpTo="@id/guideFragment"
+                app:popUpToInclusive="true"/>
+        </fragment>
+        <fragment
+            android:id="@+id/cookProgressFragment"
+            android:name="com.ssafy.yobee.ui.cook.fragment.CookProgressFragment"
+            android:label="CookProgressFragment">
+            <action
+                android:id="@+id/action_cookProgressFragment_to_errorFragment"
+                app:destination="@id/errorFragment" />
+            <action
+                android:id="@+id/action_cookProgressFragment_to_analyzeImageFragment"
+                app:destination="@id/analyzeImageFragment"
+                app:popUpTo="@+id/cookProgressFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+            <action
+                android:id="@+id/action_cookProgressFragment_to_homeFragment"
+                app:popUpTo="@id/homeFragment"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/analyzeImageFragment"
+            android:name="com.ssafy.yobee.ui.cook.fragment.AnalyzeImageFragment"
+            android:label="AnalyzeImageFragment">
+            <action
+                android:id="@+id/action_analyzeImageFragment_to_errorFragment"
+                app:destination="@id/errorFragment" />
+            <action
+                android:id="@+id/action_analyzeImageFragment_to_analyzeSuccessFragment"
+                app:destination="@id/analyzeSuccessFragment"
+                app:popUpTo="@id/analyzeImageFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+            <action
+                android:id="@+id/action_analyzeImageFragment_to_analyzeFailFragment"
+                app:destination="@id/analyzeFailFragment"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+        </fragment>
+        <fragment
+            android:id="@+id/analyzeSuccessFragment"
+            android:name="com.ssafy.yobee.ui.cook.fragment.AnalyzeSuccessFragment"
+            android:label="AnalyzeSuccessFragment">
+            <action
+                android:id="@+id/action_analyzeSuccessFragment_to_errorFragment"
+                app:destination="@id/errorFragment" />
+            <action
+                android:id="@+id/action_analyzeSuccessFragment_to_homeFragment"
+                app:popUpTo="@id/homeFragment"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+            <action
+                android:id="@+id/action_analyzeSuccessFragment_to_reviewContentFragment"
+                app:destination="@id/reviewContentFragment"
+                app:popUpTo="@id/homeFragment"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit">
+                <argument
+                    android:name="type"
+                    app:argType="integer" />
+                <argument
+                    android:name="reviewId"
+                    app:argType="long" />
+            </action>
+        </fragment>
+        <fragment
+            android:id="@+id/analyzeFailFragment"
+            android:name="com.ssafy.yobee.ui.cook.fragment.AnalyzeFailFragment"
+            android:label="AnalyzeFailFragment">
+            <action
+                android:id="@+id/action_analyzeFailFragment_pop"
+                app:popUpTo="@id/analyzeFailFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+            <action
+                android:id="@+id/action_analyzeFailFragment_to_homeFragment"
+                app:popUpTo="@id/homeFragment"
+                app:enterAnim="@anim/slide_right_enter"
+                app:exitAnim="@anim/slide_right_exit"
+                app:popEnterAnim="@anim/slide_left_enter"
+                app:popExitAnim="@anim/slide_left_exit" />
+        </fragment>
+    </navigation>
+    <fragment
+        android:id="@+id/myPageProfileFragment"
+        android:name="com.ssafy.yobee.ui.mypage.MyPageProfileFragment"
+        android:label="MyPageProfileFragment" />
+    <fragment
+        android:id="@+id/reviewByRecipeFragment"
+        android:name="com.ssafy.yobee.ui.mypage.ReviewByRecipeFragment"
+        android:label="ReviewByRecipeFragment">
+        <action
+            android:id="@+id/action_reviewByRecipeFragment_pop"
+            app:popUpTo="@id/reviewByRecipeFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_reviewByRecipeFragment_to_reviewByDateFragment"
+            app:destination="@id/reviewByDateFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit">
+            <argument
+                android:name="recipeId"
+                app:argType="long" />
+        </action>
+        <action
+            android:id="@+id/action_reviewByRecipeFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewByDateFragment"
+        android:name="com.ssafy.yobee.ui.mypage.ReviewByDateFragment"
+        android:label="ReviewByDateFragment">
+        <argument
+            android:name="recipeId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_reviewByDateFragment_pop"
+            app:popUpTo="@id/reviewByDateFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_reviewByDateFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+        <action
+            android:id="@+id/action_reviewByDateFragment_to_reviewContentFragment"
+            app:destination="@id/reviewContentFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit">
+            <argument
+                android:name="type"
+                app:argType="integer" />
+            <argument
+                android:name="reviewId"
+                app:argType="long" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/reviewContentFragment"
+        android:name="com.ssafy.yobee.ui.mypage.ReviewContentFragment"
+        android:label="ReviewContentFragment">
+        <action
+            android:id="@+id/action_reviewContentFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+        <action
+            android:id="@+id/action_reviewContentFragment_pop"
+            app:popUpTo="@id/reviewContentFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <argument
+            android:name="type"
+            app:argType="integer" />
+        <argument
+            android:name="reviewId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/likeRecipeFragment"
+        android:name="com.ssafy.yobee.ui.mypage_like_recipe.LikeRecipeFragment"
+        android:label="LikeRecipeFragment">
+        <action
+            android:id="@+id/action_likeRecipeFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+
+        <action
+            android:id="@+id/action_likeRecipeFragment_to_recipeDetailGraph"
+            app:destination="@id/recipeDetailGraph"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit">
+            <argument
+                android:name="recipeId"
+                android:defaultValue="-1"
+                app:argType="integer" />
+            <argument
+                android:name="recipeTitle"
+                android:defaultValue=""
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_likeRecipeFragment_pop"
+            app:popUpTo="@id/likeRecipeFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendFragment"
+        android:name="com.ssafy.yobee.ui.recommend.RecommendFragment"
+        android:label="RecommendFragment">
+        <action
+            android:id="@+id/action_recommendFragment_to_recommendProgressFragment"
+            app:destination="@id/recommendProgressFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_recommendFragment_pop"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/recommendFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/recommendProgressFragment"
+        android:name="com.ssafy.yobee.ui.recommend.RecommendProgressFragment"
+        android:label="RecommendProgressFragment">
+        <action
+            android:id="@+id/action_recommendProgressFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+        <action
+            android:id="@+id/action_recommendProgressFragment_to_recommendFinishFragment"
+            app:destination="@id/recommendFinishFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit">
+            <argument
+                android:name="recipeId"
+                android:defaultValue="0"
+                app:argType="integer" />
+            <argument
+                android:name="recipeTitle"
+                app:argType="string" />
+            <argument
+                android:name="recipeImage"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_recommendProgressFragment_pop"
+            app:popUpTo="@id/recommendProgressFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/recommendFinishFragment"
+        android:name="com.ssafy.yobee.ui.recommend.RecommendFinishFragment"
+        android:label="RecommendFinishFragment">
+        <action
+            android:id="@+id/action_recommendProgressFragment_pop"
+            app:popUpTo="@id/recommendProgressFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="recipeId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="recipeTitle"
+            app:argType="string" />
+        <argument
+            android:name="recipeImage"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_recommendFinishFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit" />
+        <action
+            android:id="@+id/action_recommendFinishFragment_to_recipeDetailGraph"
+            app:destination="@id/recipeDetailGraph"
+            app:enterAnim="@anim/slide_right_enter"
+            app:exitAnim="@anim/slide_right_exit"
+            app:popEnterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_left_exit">
+            <argument
+                android:name="recipeId"
+                android:defaultValue="0"
+                app:argType="integer" />
+            <argument
+                android:name="recipeTitle"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.ssafy.yobee.ui.mypage.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.ssafy.yobee.ui.login.ResetPasswordFragment"
+        android:label="ResetPasswordFragment"
+        tools:layout="@layout/fragment_reset_password" />
+</navigation>

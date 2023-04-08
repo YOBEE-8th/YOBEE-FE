@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_review_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mypage.ReviewContentFragment">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_review_content"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_toolbar" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_review_content"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_review_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_review_content"
+                style="@style/TextInputEditTextStyle"
+                android:maxLength="300"
+                android:gravity="top"
+                android:hint="@string/content_review_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_review_content_max_cnt"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/content_review_max_cnt"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tl_review_content"
+            app:layout_constraintTop_toBottomOf="@+id/tl_review_content" />
+
+        <TextView
+            android:id="@+id/tv_review_content_cnt"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/content_review_cnt"
+            android:textColor="@color/bittersweet_400"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_review_content_max_cnt"
+            app:layout_constraintEnd_toStartOf="@+id/tv_review_content_max_cnt"
+            app:layout_constraintTop_toTopOf="@+id/tv_review_content_max_cnt" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_review_content_done"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/content_review_btn_write"
+            android:visibility="gone"
+            android:enabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_review_content_check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="30dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_review_content_edit"
+                style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="20dp"
+                android:enabled="false"
+                android:text="@string/content_review_btn_edit" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_review_content_delete"
+                style="@style/ButtonStyle.LargeStyle.BitterSweet2008Style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:text="@string/content_review_btn_delete" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

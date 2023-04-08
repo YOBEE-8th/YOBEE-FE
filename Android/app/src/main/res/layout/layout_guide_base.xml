@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_mic_status"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_mic_on"
+        app:layout_constraintStart_toStartOf="@id/tv_description"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.willy.ratingbar.BaseRatingBar
+        android:id="@+id/rb_fire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:clickable="false"
+        app:layout_constraintEnd_toStartOf="@+id/iv_timer"
+        app:layout_constraintStart_toEndOf="@id/iv_mic_status"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srb_rating="3"
+        app:srb_clickable="false"
+        app:srb_drawableEmpty="@drawable/ic_fire_off"
+        app:srb_drawableFilled="@drawable/ic_fire_on"
+        app:srb_isIndicator="false"
+        app:srb_numStars="3"
+        app:srb_scrollable="false"
+        app:srb_starHeight="28dp"
+        app:srb_starPadding="4dp"
+        app:srb_starWidth="20dp"
+        app:srb_stepSize="1" />
+
+    <ImageView
+        android:id="@+id/iv_timer"
+        android:layout_width="31dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_timer_bittersweet500"
+        app:layout_constraintEnd_toStartOf="@+id/tv_time"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/TextViewBold.Size18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/bittersweet_500"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_guide_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_timer"
+        app:layout_constraintBottom_toBottomOf="@id/iv_timer" />
+
+    <ImageView
+        android:id="@+id/iv_description_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="16dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_guide_sample"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        style="@style/TextViewBold.Size18"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:lineSpacingExtra="16sp"
+        android:textColor="@color/black"
+        android:text="@string/tv_guide_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_description_image"
+        app:layout_constraintTop_toBottomOf="@id/rb_fire" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_mic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="recipeSearchFragment"
+            type="com.ssafy.yobee.ui.search.RecipeSearchFragment" />
+
+        <variable
+            name="recipeSearchViewModel"
+            type="com.ssafy.yobee.ui.search.RecipeSearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.search.RecipeSearchFragment">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_search_keyword"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            app:boxStrokeErrorColor="@color/sunset"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/sunset"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+            app:startIconDrawable="@drawable/ic_search"
+            app:startIconTint="@color/bittersweet_500">
+
+            <AutoCompleteTextView
+                android:id="@+id/actv_recipe_search_keyword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/content_input_search_is_empty"
+                style="@style/TextInputEditTextStyle"
+                android:imeOptions="actionSearch"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/cb_recipe_search_is_ai"
+            style="@style/CheckBoxStyle"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:onClick="@{()->recipeSearchFragment.onIsAiCheckBoxClick()}"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_search_keyword" />
+
+        <TextView
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="AI 레시피"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/cb_recipe_search_is_ai"
+            app:layout_constraintStart_toEndOf="@id/cb_recipe_search_is_ai"
+            app:layout_constraintTop_toTopOf="@id/cb_recipe_search_is_ai" />
+
+        <LinearLayout
+            android:id="@+id/ll_recipe_search_sort_by"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_search_keyword">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:onClick="@{()->recipeSearchFragment.onOrderButtonClick()}"
+                android:src="@drawable/ic_sort" />
+
+            <TextView
+                android:id="@+id/tv_recipe_list_sort_by"
+                style="@style/TextViewRegular.Size12"
+                android:textColor="@color/grey_600"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:onClick="@{()->recipeSearchFragment.onSortButtonClick()}"
+                app:setSortByText="@{recipeSearchViewModel.sortBy}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_recipe_search_result"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_recipe_search_sort_by">
+
+            <include
+                android:id="@+id/layout_no_item"
+                layout="@layout/common_no_item"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recipe_search"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:paddingHorizontal="20dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

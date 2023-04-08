@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="registerFragment"
+            type="com.ssafy.yobee.ui.register.RegisterFragment" />
+
+        <variable
+            name="registerViewModel"
+            type="com.ssafy.yobee.ui.register.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.register.RegisterFragment">
+
+        <include
+            android:id="@+id/tb_register"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_register_title_email"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/title_email"
+            android:textColor="@color/grey_600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tb_register" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_register_email"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:boxStrokeErrorColor="@color/sunset"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/sunset"
+            app:layout_constraintEnd_toStartOf="@id/btn_register_email_check"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_title_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_register_email"
+                style="@style/TextInputEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/content_input_email_is_empty"
+                android:inputType="textEmailAddress"
+                app:addTextChangedListener="@{registerViewModel.emailWatcher()}"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register_email_check"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="@{()->registerViewModel.checkEmailRegularExpression()}"
+            android:text="@string/title_ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_title_email" />
+
+        <TextView
+            android:id="@+id/tv_register_verification_code"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/title_verification_code"
+            android:textColor="@color/grey_600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_register_email" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_register_verification_code"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:boxStrokeErrorColor="@color/sunset"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/sunset"
+            app:helperTextTextColor="@color/sunset"
+            app:layout_constraintEnd_toStartOf="@id/btn_register_check_verification_code"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_verification_code">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_register_verification_code"
+                style="@style/TextInputEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/content_verification_code_hint"
+                android:inputType="number"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register_check_verification_code"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:enabled="false"
+            android:text="@string/title_ok"
+            android:onClick="@{()->registerViewModel.checkVerificationCodeState(btnRegisterCheckVerificationCode.getText().toString().trim(),etRegisterVerificationCode.getText().toString().trim())}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_verification_code" />
+
+        <TextView
+            android:id="@+id/tv_register_title_password"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/title_password"
+            android:textColor="@color/grey_600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_register_verification_code" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_register_password"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:boxStrokeErrorColor="@color/sunset"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/sunset"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_title_password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_register_password"
+                style="@style/TextInputEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/content_input_password_is_empty"
+                app:addTextChangedListener="@{registerViewModel.passwordWatcher()}"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_register_title_password_confirm"
+            style="@style/TextViewRegular.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/title_password_confirm"
+            android:textColor="@color/grey_600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_register_password" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_register_password_confirm"
+            style="@style/TextInputLayoutRadius8BitterSweet200Stroke1Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:boxStrokeErrorColor="@color/sunset"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/sunset"
+            app:layout_constraintEnd_toStartOf="@id/btn_register_check_password_confirm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_title_password_confirm"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_register_password_confirm"
+                style="@style/TextInputEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/content_input_password_is_empty"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register_check_password_confirm"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:enabled="false"
+            android:onClick="@{()->registerViewModel.checkConfirm(etRegisterPasswordConfirm.getText().toString())}"
+            android:text="@string/title_ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_title_password_confirm" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register_next"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:enabled="false"
+            android:onClick="@{()->registerFragment.moveFragment()}"
+            android:text="@string/title_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

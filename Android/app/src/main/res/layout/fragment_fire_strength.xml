@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/layout_guide_base"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E0000000"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_fire_strength_mic_status"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:visibility="invisible"
+                android:src="@drawable/ic_mic_on"
+                app:layout_constraintStart_toEndOf="@id/iv_fire_strength_description_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_fire_strength_description_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="16dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="4:3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.willy.ratingbar.BaseRatingBar
+                android:id="@+id/rb_fire_strength_fire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clickable="false"
+                app:layout_constraintEnd_toStartOf="@+id/iv_fire_strength_timer"
+                app:layout_constraintStart_toEndOf="@id/iv_fire_strength_mic_status"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srb_rating="3"
+                app:srb_clickable="false"
+                app:srb_drawableEmpty="@drawable/ic_fire_off"
+                app:srb_drawableFilled="@drawable/ic_fire_on"
+                app:srb_isIndicator="false"
+                app:srb_numStars="3"
+                app:srb_scrollable="false"
+                app:srb_starHeight="28dp"
+                app:srb_starPadding="4dp"
+                app:srb_starWidth="20dp"
+                app:srb_stepSize="1" />
+
+            <ImageView
+                android:id="@+id/iv_fire_strength_timer"
+                android:layout_width="31dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:adjustViewBounds="true"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                android:src="@drawable/ic_timer_bittersweet500"
+                app:layout_constraintEnd_toStartOf="@+id/tv_fire_strength_time"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_fire_strength_time"
+                style="@style/TextViewBold.Size18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bittersweet_500"
+                android:layout_marginEnd="16dp"
+                android:text="@string/tv_guide_time"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_fire_strength_timer"
+                app:layout_constraintBottom_toBottomOf="@id/iv_fire_strength_timer" />
+
+            <ImageView
+                android:id="@+id/iv_fire_strength_arrow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_guide_arrow_top"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/rb_fire_strength_fire"
+                app:layout_constraintTop_toTopOf="@+id/rb_fire_strength_fire" />
+
+            <TextView
+                android:id="@+id/tv_fire_strength"
+                style="@style/TextViewBold.Size22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/title_fire_strength_description"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/iv_fire_strength_arrow"
+                app:layout_constraintStart_toStartOf="@+id/iv_fire_strength_arrow"
+                app:layout_constraintTop_toBottomOf="@+id/iv_fire_strength_arrow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/layout_guide_base"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E0000000"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_set_timer_description_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="16dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="4:3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_set_timer_timer"
+                android:layout_width="31dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:adjustViewBounds="true"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_timer_bittersweet500"
+                app:layout_constraintEnd_toStartOf="@+id/tv_set_timer_time"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_set_timer_time"
+                style="@style/TextViewBold.Size18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bittersweet_500"
+                android:layout_marginEnd="16dp"
+                android:text="@string/tv_guide_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_set_timer_timer"
+                app:layout_constraintBottom_toBottomOf="@id/iv_set_timer_timer" />
+
+            <ImageView
+                android:id="@+id/iv_set_timer_arrow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_guide_arrow_top"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/iv_set_timer_timer"
+                app:layout_constraintTop_toTopOf="@+id/iv_set_timer_timer" />
+
+            <TextView
+                android:id="@+id/tv_set_timer"
+                style="@style/TextViewBold.Size22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/title_set_timer_description"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/iv_set_timer_timer"
+                app:layout_constraintTop_toBottomOf="@+id/iv_set_timer_arrow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

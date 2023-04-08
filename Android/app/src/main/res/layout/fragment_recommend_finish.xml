@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="recommendResult"
+            type="com.ssafy.domain.model.recommend.RecommendDomainModel" />
+
+        <variable
+            name="recommendFinishFragment"
+            type="com.ssafy.yobee.ui.recommend.RecommendFinishFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.recommend.RecommendFinishFragment">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_recommend_finish_user_name"
+            style="@style/TextViewBold.Size18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="46dp"
+            android:text="오늘 메뉴는 너다!"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar" />
+
+        <ImageView
+            glideImage="@{recommendResult.image}"
+            android:id="@+id/iv_recommend_finish_food"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_recommend_finish_user_name" />
+
+        <TextView
+            android:id="@+id/tv_recommend_finish_food"
+            style="@style/TextViewBold.Size18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{recommendResult.title}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/iv_recommend_finish_food" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_recommend_finish_lets_cook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="요리하러 가기"
+            android:onClick="@{() -> recommendFinishFragment.letsCookClick()}"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/bittersweet_400"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet4008Style"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_recommend_finish_go_home" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_recommend_finish_go_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="홈으로"
+            android:textColor="@color/atomic"
+            style="@style/ButtonStyle.LargeStyle.BitterSweet2008Style"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

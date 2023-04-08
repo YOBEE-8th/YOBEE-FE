@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_refresh_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.common.ErrorFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_error_refresh"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_refresh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_error_refresh"
+                style="@style/TextViewBold.Size14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/content_error_refresh"
+                android:textColor="@color/bittersweet_400"
+                app:layout_constraintEnd_toEndOf="@+id/iv_error_refresh"
+                app:layout_constraintStart_toStartOf="@+id/iv_error_refresh"
+                app:layout_constraintTop_toBottomOf="@+id/iv_error_refresh" />
+
+            <ImageView
+                android:id="@+id/iv_error_message"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/ic_logo_server_fail"
+                app:layout_constraintBottom_toTopOf="@+id/tv_error_message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_error_message"
+                style="@style/TextViewBold.Size22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/content_error_message"
+                android:textColor="@color/bittersweet_400"
+                android:lineHeight="30dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv_error_message"
+                app:layout_constraintStart_toStartOf="@+id/iv_error_message"
+                app:layout_constraintTop_toBottomOf="@+id/iv_error_message" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>
