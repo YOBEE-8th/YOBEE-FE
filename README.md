@@ -4,8 +4,9 @@
 
 ### 📱 Android
 
-| Architecture | CleanArchitecture, MVVM, Single Activity Application                                                                                                         |
+| Title | Content                                                                                                         |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Architecture | CleanArchitecture, MVVM, Single Activity Application                                                                                                         |
 | DI           | Hilt                                                                                                                                                         |
 | Jetpack      | Navigation, ViewBinding, DataBinding, ViewModel, LiveData, Lifecycle                                                                                         |
 | Network      | Retrofit2, OkHttp, Gson                                                                                                                                      |
